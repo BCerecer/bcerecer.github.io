@@ -1,0 +1,362 @@
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How I hacked Tinder</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How I hacked Tinder">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How I hacked Tinder">
+    <meta property="og:description" content="">
+
+    <meta name="twitter:site" content="@yourblogtwitter">
+    
+    <meta name="twitter:creator" content="@yourtwitter">
+    
+    <meta name="google-site-verification" content="">
+    
+    <meta property="fb:admins" content="">
+
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="http://fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic%7COpen+Sans:700,400&amp;subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/main.min.css?v=36c4c77bb5">
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="../assets/js/head-scripts.min.js?v=36c4c77bb5"></script>
+
+    <link rel="canonical" href="http://localhost:2368/how-i-hacked-tinders-api/">
+    
+    <meta property="og:site_name" content="Blas Cerecer">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How I hacked Tinder">
+    <meta property="og:description" content="This is my first post, blog, whatever. I'm actually new to all this. Should I do an introductory post so you can know a little about my background? This is a lazy Sunday, and I don't feel like doing it...">
+    <meta property="og:url" content="http://localhost:2368/how-i-hacked-tinders-api/">
+    <meta property="article:published_time" content="2015-03-30T03:53:55.020Z">
+    <meta property="article:modified_time" content="2015-03-30T08:51:47.535Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How I hacked Tinder">
+    <meta name="twitter:description" content="This is my first post, blog, whatever. I'm actually new to all this. Should I do an introductory post so you can know a little about my background? This is a lazy Sunday, and I don't feel like doing it...">
+    <meta name="twitter:url" content="http://localhost:2368/how-i-hacked-tinders-api/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Blas Cerecer",
+    "author": {
+        "@type": "Person",
+        "name": "Blas Cerecer",
+        "url": "http://localhost:2368/author/blas",
+        "sameAs": null
+    },
+    "headline": "How I hacked Tinder",
+    "url": "http://localhost:2368/how-i-hacked-tinders-api/",
+    "datePublished": "2015-03-30T03:53:55.020Z",
+    "dateModified": "2015-03-30T08:51:47.535Z",
+    "description": "This is my first post, blog, whatever. I&#x27;m actually new to all this. Should I do an introductory post so you can know a little about my background? This is a lazy Sunday, and I don&#x27;t feel like doing it..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.5">
+    <link rel="alternate" type="application/rss+xml" title="Blas Cerecer" href="http://localhost:2368/rss/">
+  </head>
+  <body class="post-template">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="../" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <li class="drawer-list-divider">
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          <li class="drawer-list-item">
+            <a href="http://twitter.com/blscrcr" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="http://github.com/BCerecer" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="https://plus.google.com/105607513163519846615/posts">
+              <i class="fa fa-google-plus"></i>Google+
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:blcerecer@gmail.com">
+              <i class="fa fa-envelope"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2015-03-29" itemprop="datePublished">
+                  4 days ago
+                </time>
+              </li>
+              <li class="post-meta-item">
+                <a href="index.html#disqus_thread" data-disqus-identifier="2">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="index.html" itemprop="url" data-pjax title="How I hacked Tinder">How I hacked Tinder</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+              <div class="post-author-info">
+                <a href="index.html" class="post-author-name">
+                  Blas Cerecer
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <p>This is my first post, blog, whatever. I'm actually new to all this. Should I do an introductory post so you can know a little about my background? This is a lazy Sunday, and I don't feel like doing it right now, but let me know if you would like to know more about me. </p>
+
+<p>Tinder is a popular dating app right now, and has a lot of users including some of my friends that spend a significant amount of time swiping and messaging random girls. Personally, I don't use it because I have better things to do that trying to talk to random girls that I don't even know if they are real about insignificant topics, but that's just a personal opinion. If you like and it works for you, keep doing your thing. </p>
+
+<p align="center">  
+<img src="../content/images/2015/03/tinder.png" alt="Tinder Messages">
+</p>
+
+<p>Ok, it all started because I wanted to make some money by doing an app that would automate Tinder by liking all the people around you, and sending the same message to all your matches. Unfortunately, I was not able to complete the app because of one small thing. I couldn't automatically get Facebook's Token for Tinder's API for the user. However, I managed to do some reverse engineering to send the same message to all your matches, liking all people around, changing your profile settings for example: your location, description, etc. </p>
+
+<p>In this screenshot you can see </p>
+
+<p><img src="../content/images/2015/03/Screenshot_2015-03-29-13-35-34.png" alt="Tinder Messages"></p>
+
+<p>This does not prove anything because anyone can send the same message to all their contacts, and claim that they automated it, buuuuuuuut there's a video showing how this is actually real later on this post. </p>
+
+<p>So, how did I start?</p>
+
+<p>I did not know anything about reverse engineer before this, but watching some tutorials, tinder hacking/bots, and reverse engineer gave me the necessary tools. I used Java for this (probably not easiest language to do this).</p>
+
+<p>Now let's actually start explaining what I did!</p>
+
+<p>First, I downloaded a Web Debugging Proxy, which is called Charles proxy. Manually connected my phone to my computer's ip address, and started to debug what was going on in tinder's api. From there you can see what happens when you login, when you like a person, send a message, change the settings, etc. It looks something like this.</p>
+
+<p><img src="../content/images/2015/03/Charles-.png" alt="Charles Proxy">
+Yeah, I'm awesome at editing images. </p>
+
+<p>After that I discovered what actions needed GET or POST, and started the Java programming using Eclipse. First of all I uploaded my code to Github, which you can download from here <a href="https://github.com/BCerecer/TinderHackJava">https://github.com/BCerecer/TinderHackJava</a> </p>
+
+<p>I did not explain that much on Github, but I'll explain everything here ;)</p>
+
+<p>Before we begin you need some to import some libraries for Eclipse like httpclient, gson, etc. You can figure this out, if not just contact me. </p>
+
+<p>The first part is self explanatory, actually is all pretty simple to understand. Ok, so a tinder object is created where you have to pass your Facebook's Token (I hate you toke!), and your Facebook id. </p>
+
+<p>To get the Facebook's token just click this link, and it will redirect you to another url that only appears for 5 seconds, which you have to be quick to copy! and then it give leads you to success screen. Don't worry if you weren't fast enough to copy the url you can try it again. </p>
+
+<p><a href="https://www.facebook.com/dialog/oauth?client_id=464891386855067&amp;redirect_uri=https://www.facebook.com/connect/login_success.html&amp;response_type=token">Get your Facebook token</a></p>
+
+<p>The url sthat you have to copy looks something like this: <a href="https://www.facebook.com/connect/login">https://www.facebook.com/connect/login</a><em>success.html#access</em><em>token=YOUR TOKEN ARE A MANY CHARACTERS HERE &amp;expires</em>in=5965</p>
+
+<p>and your facebook id can easily be obtained because is your vanity url. For example, let's say that my facebook is facebook.com/blablabla, my id would be blablabla. </p>
+
+<p><img src="../content/images/2015/03/login-1.png" alt="Login"></p>
+
+<p>The login method authenticates your tinder profile in tinder's api by using your the provided information about your facebook.</p>
+
+<p>Beginner's fact: APIs work with JSON objects, which I think it stands for JavaScript Object Notation.</p>
+
+<p>By the way, this thing of writing blogs is tiring!</p>
+
+<p>Let's continue...</p>
+
+<p>Give the information, and update your profile. For int gender/genderFilter male is 0, female 1, and -1 male and female. Everything else is self explanatory.</p>
+
+<p><img src="../content/images/2015/03/Screen-Shot-2015-03-29-at-8-39-30-PM.png" alt="Update Profile"></p>
+
+<p>In case you want to send a message to only one match.</p>
+
+<p><img src="../content/images/2015/03/Screen-Shot-2015-03-29-at-8-39-37-PM.png" alt="Login"></p>
+
+<p>Returns a list with the matches in it.</p>
+
+<p><img src="../content/images/2015/03/Screen-Shot-2015-03-29-at-8-39-44-PM.png" alt="Login"></p>
+
+<p>Send the same message to all your contacts.</p>
+
+<p><img src="../content/images/2015/03/Screen-Shot-2015-03-29-at-8-39-51-PM.png" alt="Login"></p>
+
+<p>Redundant</p>
+
+<p><img src="../content/images/2015/03/Screen-Shot-2015-03-29-at-8-39-59-PM.png" alt="Login"></p>
+
+<p>Redundant</p>
+
+<p><img src="../content/images/2015/03/Screen-Shot-2015-03-29-at-8-40-44-PM.png" alt="Login"></p>
+
+<p>Here is a video sending the message to all my matches:  </p>
+
+<p align="center">  
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Y_zKxOkZpzU" frameborder="0" allowfullscreen></iframe>  
+</p>
+
+<p>That's pretty much all, for any question contact me. </p>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="index.html" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Blas Cerecer</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">March 29, 2015</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="index.html#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="index.html#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="index.html#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES * * */
+                      var disqus_shortname = 'bcerecer';
+                      
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                          
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>© 2015. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Proudly published with <a href="http://ghost.org" target="_blank">Ghost</a></small></p>
+    </footer>
+  </div>
+</section>
+
+<script type="text/javascript">
+  if(GHOSTIUM.haveDisqus) {
+    var disqus_identifier = '2';
+
+    if(typeof DISQUS !== 'object') {
+      (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    }
+  } else {
+    document.querySelector('.post-comments').remove();
+  }
+</script>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../public/jquery.js?v=36c4c77bb5"></script>
+
+    <script src="../assets/js/foot-scripts.min.js?v=36c4c77bb5"></script>
+
+    <script type="text/javascript">
+
+      if(GHOSTIUM.haveGA) {
+        (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+        function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+        t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+        t.src='//www.google-analytics.com/analytics.js';
+        z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+        ga('create',ga_ua);ga('send','pageview');
+      }
+
+      if(GHOSTIUM.haveDisqus) {
+        (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+      }
+    </script>
+  </body>
